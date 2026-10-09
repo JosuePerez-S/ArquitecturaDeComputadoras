@@ -1,2 +1,7 @@
-# ArquitecturaDeComputadoras
-*Tema 1*
+# ArquitecturaDeComputadoras#
+
+**CPU**
+
+*Que es la cpu*
+
+
