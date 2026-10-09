@@ -1,0 +1,68 @@
+:root {
+    --blue-main: #1E3A8A;
+    --blue-accent: #3B82F6;
+    --blue-light: #EFF6FF;
+    --bg-color: #F8FAFC;
+    --text-color: #0F172A;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: var(--blue-main);
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: var(--white);
+    border-left: 5px solid var(--blue-main);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.example-card {
+    border-left-color: var(--blue-accent);
+    background-color: var(--blue-light);
+}
+
+.tech-card {
+    border-left-color: #0284C7;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.btn-nav, .btn-home {
+    background-color: var(--blue-main);
+    color: var(--white);
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-nav:hover, .btn-home:hover {
+    background-color: var(--blue-accent);
+}
