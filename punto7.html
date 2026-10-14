@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07. Registro de Banderas - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">07. Registro de Banderas (FLAGS / PSW)</h2>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>Conjunto de bits individuales dentro de la CPU que informan sobre el estado o condición resultante (cero, signo, acarreo) tras la última operación ejecutada por la ALU.</p>
+        </section>
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>Es cuando tu pantalla se pone roja y parpadea porque estás a un tiro de morir (Bandera de Cero o Signo), o cuando te sale el aviso de que tu racha de bajas se activó con éxito.</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>Circuitos combinacionales modifican bits como ZF (Zero), SF (Sign) o CF (Carry) de acuerdo con el resultado matemático obtenido en el cálculo.</p>
+            </div>
+        </section>
+           <!-- Imagen Destacada 1: Encabezado Principal -->
+            <div style="margin: 1.5rem auto; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--blue-neon); box-shadow: 0 0 15px var(--blue-glow);">
+                <img src="fl.jpeg" alt="Arquitectura de CPU" style="width: 100%; height: auto; display: block;">
+            </div>
+
+
+
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Simulador de Estado FLAGS</h3>
+            <p>Ejecuta una operación matemática simulada en la ALU:</p>
+
+
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--card-border);">
+                <select id="select-op-flag" style="background: var(--card-bg); border: 1px solid var(--blue-neon); color: var(--blue-neon); padding: 0.4rem; border-radius: 4px; margin-bottom: 1rem;">
+                    <option value="zero">10 - 10 (Resultado 0)</option>
+                    <option value="negative">3 - 8 (Resultado Negativo)</option>
+                    <option value="carry">255 + 1 (Acarreo)</option>
+                </select>
+                <br>
+                <button onclick="calcularFlags()" class="btn-nav" style="cursor: pointer;">EJECUTAR EN ALU</button>
+                
+                <div id="display-flags" style="margin-top: 1rem; font-family: 'Rajdhani', sans-serif; color: var(--text-light); background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px;">
+                    Estado FLAGS: [ ZF=0 | SF=0 | CF=0 ]
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto6.html" class="btn-nav">⬅️ NODO 06</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="punto8.html" class="btn-nav">NODO 08 ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        function calcularFlags() {
+            const t = document.getElementById('select-op-flag').value;
+            let s = t==="zero"?"ZF = 1 (Zero Flag Activada)":t==="negative"?"SF = 1 (Sign Flag Activada)":"CF = 1 (Carry Flag Activada)";
+            document.getElementById('display-flags').innerHTML = `<strong style="color:var(--blue-neon);">${s}</strong>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05. Código de Operación - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">05. Código de Operación (Opcode)</h2>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>El Código de Operación (Opcode) es la porción binaria específica dentro de una instrucción en lenguaje máquina que indica al procesador qué acción fundamental debe llevar a cabo.</p>
+        </section>
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>Es exactamente el verbo imperativo dentro de una oración de instrucciones (por ejemplo: "Sumar", "Copiar" o "Saltar"), marcando la directriz exacta a seguir.</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>El decodificador analiza los bits del Opcode para activar directamente las compuertas lógicas de control que configuran la ruta de datos en el interior de la ALU.</p>
+            </div>
+        </section>
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Selector de Opcodes Nativos</h3>
+            <p>Selecciona una instrucción para ver su código binario de operación:</p>
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--card-border);">
+                <select id="select-opcode" onchange="cambiarOpcode()" style="background: var(--card-bg); border: 1px solid var(--blue-neon); color: var(--blue-neon); padding: 0.5rem; border-radius: 4px;">
+                    <option value="ADD">ADD (Suma)</option>
+                    <option value="MOV">MOV (Transferencia)</option>
+                    <option value="JMP">JMP (Salto)</option>
+                </select>
+                
+                <div id="display-opcode" style="margin-top: 1rem; font-family: 'Rajdhani', sans-serif; color: var(--text-light); text-align: left; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px;">
+                    Binario Opcode: 00000100 <br>Control: Activación de circuitos sumadores en la ALU.
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto4.html" class="btn-nav">⬅️ NODO 04</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="punto6.html" class="btn-nav">NODO 06 ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        function cambiarOpcode() {
+            const v = document.getElementById('select-opcode').value;
+            let bin = v==="ADD"?"00000100":v==="MOV"?"10110000":"11101011";
+            let c = v==="ADD"?"Circuitos sumadores ALU.":v==="MOV"?"Habilitación de buses internos.":"Modificación directa del PC.";
+            document.getElementById('display-opcode').innerHTML = `Binario Opcode: ${bin} <br>Control: ${c}`;
+        }
+    </script>
+</body>
+</html>

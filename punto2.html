@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02. Contador de Programa - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">02. Contador de Programa (PC / IP)</h2>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>El Contador de Programa (Program Counter o Instruction Pointer) es un registro de control fundamental que almacena la dirección de memoria RAM de la siguiente instrucción que debe ser ejecutada por el procesador.</p>
+        </section>
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>Funciona exactamente como un <strong>marcapáginas digital</strong> en un libro de recetas: mientras cocinas, sabes en qué línea y página exacta vas sin tener que leer todo el libro de nuevo desde el principio.</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>Durante la fase de captación (Fetch), la Unidad de Control lee el contenido del PC y lo transfiere al MAR. Inmediatamente después, el hardware incrementa de forma automática el valor del PC sumándole el tamaño en bytes de la instrucción leída.</p>
+            </div>
+        </section>
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Simulador de Avance del Contador de Programa</h3>
+            <p>Simula el ciclo de lectura de instrucciones y observa cómo se incrementa dinámicamente la dirección en el PC:</p>
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; margin-top: 1rem; border: 1px solid var(--card-border); text-align: center;">
+                <div id="pc-display" style="font-family: monospace; font-size: 1.4rem; color: var(--blue-neon); margin-bottom: 1rem;">
+                    PC Actual: 0x0040
+                </div>
+                <button onclick="incrementarPC()" class="btn-nav" style="cursor: pointer;">CAPTURAR Y AVANZAR PC</button>
+                
+                <div id="pc-status" style="margin-top: 1.2rem; font-family: 'Rajdhani', sans-serif; color: var(--text-light); background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px;">
+                    Estado: Listo para el siguiente ciclo de instrucción...
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto1.html" class="btn-nav">⬅️ NODO 01</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="punto3.html" class="btn-nav">NODO 03 ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        let direccionActual = 0x0040;
+        function incrementarPC() {
+            direccionActual += 4;
+            const hexStr = "0x" + direccionActual.toString(16).toUpperCase().padStart(4, '0');

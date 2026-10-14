@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08. Direccionamiento Indexado - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">08. Direccionamiento Indexado y Desplazamiento</h2>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>Modo de direccionamiento donde la dirección física efectiva de un operando se calcula sumando el valor de un registro base más una constante numérica fija (desplazamiento).</p>
+        </section>
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>Es cuando te dan una directiva tipo: "Ubícate en el hangar principal (Registro Base) y avanza 3 contenedores a la derecha (Desplazamiento)" para encontrar la posición exacta del botín.</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>La ALU suma el contenido del registro base con el valor de desplazamiento incluido en la instrucción, enviando la dirección resultante directamente hacia el MAR.</p>
+            </div>
+        </section>
+
+            <!-- Imagen Destacada 1: Encabezado Principal -->
+            <div style="margin: 1.5rem auto; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--blue-neon); box-shadow: 0 0 15px var(--blue-glow);">
+                <img src="alu.jpeg" alt="Arquitectura de CPU" style="width: 100%; height: auto; display: block;">
+            </div>
+
+
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Simulador de Dirección Efectiva</h3>
+            <p>Modifica la Base y el Desplazamiento para calcular la celda de memoria:</p>
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--card-border);">
+                <input type="text" id="reg-base" value="2000" style="background: var(--card-bg); border: 1px solid var(--blue-neon); color: var(--blue-neon); width: 80px; text-align: center; border-radius: 4px;"> + 
+                <input type="number" id="offset-val" value="12" style="background: var(--card-bg); border: 1px solid var(--blue-neon); color: var(--blue-neon); width: 60px; text-align: center; border-radius: 4px;">
+                <br><br>
+                <button onclick="calcularDireccion()" class="btn-nav" style="cursor: pointer;">CALCULAR</button>
+                
+                <div id="display-dir" style="margin-top: 1rem; font-family: 'Rajdhani', sans-serif; color: var(--text-light); background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px;">
+                    Dirección Efectiva (MAR): <strong>0x200C</strong>
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto7.html" class="btn-nav">⬅️ NODO 07</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="punto9.html" class="btn-nav">NODO 09 ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        function calcularDireccion() {
+            let b = parseInt(document.getElementById('reg-base').value, 16) || 0;
+            let o = parseInt(document.getElementById('offset-val').value) || 0;
+            let res = (b + o).toString(16).toUpperCase();
+            document.getElementById('display-dir').innerHTML = `Dirección Efectiva (MAR): <strong style="color:var(--blue-neon);">0x${res}</strong>`;
+        }
+    </script>
+</body>
+</html>

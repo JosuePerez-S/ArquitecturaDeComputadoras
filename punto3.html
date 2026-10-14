@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03. Registro de Instrucción - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">03. Registro de Instrucción (IR)</h2>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>El Registro de Instrucción (Instruction Register) es el espacio temporal dentro del procesador donde se almacena el código binario de la instrucción que acaba de ser capturada desde la memoria RAM para proceder a su análisis.</p>
+        </section>
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>Es la bandeja de entrada del mesero en un restaurante: recibe la comanda exacta tal cual la pidió el cliente y la sostiene frente a sí para descifrar qué platillo debe preparar la cocina.</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>Retiene la instrucción en formato de bits mientras el decodificador de la Unidad de Control separa de forma estricta el código de operación (Opcode) de los operandos requeridos.</p>
+            </div>
+        </section>
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Simulador de Decodificación IR</h3>
+            <p>Haz clic para simular la llegada de un código binario al IR y ver su decodificación en tiempo real:</p>
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--card-border);">
+                <div id="bin-stream" style="font-family: monospace; font-size: 1.2rem; color: var(--blue-neon); margin-bottom: 1rem;">
+                    [ 10110001 00001010 ]
+                </div>
+                <button onclick="decodificarInstruccion()" class="btn-nav" style="cursor: pointer;">DECARGAR BITS EN IR</button>
+                <div id="output-dec" style="margin-top: 1rem; font-family: 'Rajdhani', sans-serif; color: var(--text-muted);">
+                    Estado: Esperando orden de decodificación...
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto2.html" class="btn-nav">⬅️ NODO 02</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="punto4.html" class="btn-nav">NODO 04 ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        function decodificarInstruccion() {
+            const arr = [
+                { bin: "10110001 00001010", op: "MOV (Mover)", op1: "Registro AX", op2: "Valor 10" },
+                { bin: "00000101 00000101", op: "ADD (Sumar)", op1: "Registro AX", op2: "Valor 5" },
+                { bin: "01011000 00000000", op: "PUSH (Apilar)", op1: "Registro AX", op2: "N/A" }
+            ];
+            const item = arr[Math.floor(Math.random() * arr.length)];
+            document.getElementById('bin-stream').innerText = `[ ${item.bin} ]`;
+            document.getElementById('output-dec').innerHTML = `<strong style="color:var(--blue-accent);">Opcode:</strong> ${item.op} | <strong style="color:var(--blue-accent);">Destino:</strong> ${item.op1}`;
+        }
+    </script>
+</body>
+</html>

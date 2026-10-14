@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10. Riesgos y Paradas - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">10. Riesgos y Paradas en Pipelining</h2>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>Eventos o conflictos técnicos que impiden a la siguiente instrucción ejecutarse en su ciclo de reloj previsto dentro de un procesador segmentado.</p>
+        </section>
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>Es cuando de repente tienes pérdida de paquetes o un pico de ping y te congelas en medio del mapa, o cuando estás en la pantalla de respawn esperando a que termine el contador para volver a entrar a la balacera.</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>Ante dependencias de datos o saltos condicionales imprevistos, la Unidad de Control inserta burbujas de inactividad o realiza un vaciado de la tubería (Pipeline Flush).</p>
+            </div>
+        </section>
+
+          <!-- Imagen Destacada 1: Encabezado Principal -->
+            <div style="margin: 1.5rem auto; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--blue-neon); box-shadow: 0 0 15px var(--blue-glow);">
+                <img src="pi.jpeg" alt="Arquitectura de CPU" style="width: 100%; height: auto; display: block;">
+            </div>
+
+
+
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Simulador de Control de Stalls</h3>
+            <p>Simula la detección de un conflicto en la tubería de instrucciones:</p>
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--card-border);">
+                <button onclick="simularHazard()" class="btn-nav" style="cursor: pointer;">DETECTAR RIESGO DE DATOS</button>
+                
+                <div id="display-hazard" style="margin-top: 1rem; font-family: 'Rajdhani', sans-serif; color: var(--text-light); text-align: left; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px;">
+                    Estado del Pipeline: Flujo normal de instrucciones activo...
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto9.html" class="btn-nav">⬅️ NODO 09</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="final.html" class="btn-nav">CONCLUSIÓN ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        function simularHazard() {
+            document.getElementById('display-hazard').innerHTML = `
+                <span style="color: #FF5555;">[!] Riesgo de Datos Detectado:</span> Instrucción 2 requiere el resultado aún no escrito por la Instrucción 1. <br>
+                <span style="color: var(--blue-neon);">[ok] Acción tomada:</span> Inserción de 1 ciclo de parada (Stall) en el Pipeline.
+            `;
+        }
+    </script>
+</body>
+</html>

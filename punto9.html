@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09. Conjunto de Instrucciones - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">09. Conjunto de Instrucciones (ISA)</h2>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>Instruction Set Architecture: Especificación completa del vocabulario de comandos binarios, registros y formatos que comprende de forma nativa un procesador.</p>
+        </section>
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>Es el motor de programación de Call of Duty. Define qué comandos entiende el servidor, qué físicas aplican las armas y cómo se traduce cada movimiento del jugador en el mapa.</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>Define la interfaz física y lógica entre el hardware y el software, diferenciando arquitecturas como CISC (instrucciones complejas) y RISC (instrucciones simplificadas).</p>
+            </div>
+        </section>
+
+        <!-- Imagen Destacada 1: Encabezado Principal -->
+            <div style="margin: 1.5rem auto; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--blue-neon); box-shadow: 0 0 15px var(--blue-glow);">
+                <img src="la.jpeg" alt="Arquitectura de CPU" style="width: 100%; height: auto; display: block;">
+            </div>
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Comparador de Arquitecturas ISA</h3>
+            <p>Selecciona una filosofía de diseño para ver sus características:</p>
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--card-border);">
+                <select id="select-isa" onchange="mostrarIsa()" style="background: var(--card-bg); border: 1px solid var(--blue-neon); color: var(--blue-neon); padding: 0.4rem; border-radius: 4px;">
+                    <option value="CISC">CISC (Ej. Intel x86)</option>
+                    <option value="RISC">RISC (Ej. ARM / RISC-V)</option>
+                </select>
+                
+                <div id="display-isa" style="margin-top: 1rem; font-family: 'Rajdhani', sans-serif; color: var(--text-light); text-align: left; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px;">
+                    Instrucciones de longitud variable y operaciones complejas directas en memoria.
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto8.html" class="btn-nav">⬅️ NODO 08</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="punto10.html" class="btn-nav">NODO 10 ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        function mostrarIsa() {
+            let val = document.getElementById('select-isa').value;
+            let txt = val==="CISC"?"Instrucciones de longitud variable y operaciones complejas directas en memoria.":"Instrucciones de tamaño fijo optimizadas para ejecutarse en 1 solo ciclo (Load/Store).";
+            document.getElementById('display-isa').innerText = txt;
+        }
+    </script>
+</body>
+</html>

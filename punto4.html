@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04. Registros MAR y MBR - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">04. Registros MAR y MBR/MDR</h2>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>El MAR (Memory Address Register) especifica la dirección exacta de memoria para la lectura o escritura. El MBR (Memory Buffer Register) almacena temporalmente el dato que entra o sale de dicha posición.</p>
+        </section>
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>El MAR es la dirección postal escrita en un sobre de correspondencia, mientras que el MBR es la carta real que va adentro viajando a través del sistema de correo (el bus).</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>Para leer datos, la CPU coloca la dirección de RAM en el MAR y activa la línea de lectura. La memoria responde enviando el contenido hacia el bus de datos, siendo capturado de inmediato por el MBR.</p>
+            </div>
+        </section>
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Simulador de Enlace MAR ⇄ MBR ⇄ RAM</h3>
+            <p>Introduce una dirección hexadecimal de memoria para simular la petición de lectura de datos:</p>
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--card-border);">
+                <input type="text" id="input-dir" value="0x1048" style="background: var(--card-bg); border: 1px solid var(--blue-neon); color: var(--blue-neon); padding: 0.4rem; text-align: center; font-family: monospace; border-radius: 4px; width: 120px;">
+                <br><br>
+                <button onclick="simularLectura()" class="btn-nav" style="cursor: pointer;">EJECUTAR PETICIÓN</button>
+                
+                <div id="output-ram" style="margin-top: 1rem; font-family: 'Rajdhani', sans-serif; color: var(--text-light); text-align: left; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px;">
+                    Estado: Listo para consultar RAM...
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto3.html" class="btn-nav">⬅️ NODO 03</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="punto5.html" class="btn-nav">NODO 05 ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        function simularLectura() {
+            const dir = document.getElementById('input-dir').value;
+            const datos = ["0x45FA (Instrucción ADD)", "0xFF02 (Dato Entero 50)", "0x00A1 (Puntero Stack)"];
+            const res = datos[Math.floor(Math.random() * datos.length)];
+            document.getElementById('output-ram').innerHTML = `MAR (Dirección): [ ${dir} ] <br> MBR (Dato Recuperado): <strong style="color:var(--blue-neon);">${res}</strong>`;
+        }
+    </script>
+</body>
+</html>

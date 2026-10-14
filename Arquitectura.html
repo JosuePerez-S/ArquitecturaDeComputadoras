@@ -1,52 +1,100 @@
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1. Registros - Arquitectura de Computadoras</title>
+    <title>Arquitectura de CPU - Tecnológico de Software</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <h1>Arquitectura de CPU</h1>
-        <a href="index.html" class="btn-home">🏠 Índice</a>
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
     </header>
 
     <main class="container">
-        <!-- Título del Tema -->
-        <h2 class="topic-title">1. Registros Internos</h2>
+        <!-- Sección de Bienvenida e Introducción -->
+        <section class="card" style="border-left: 4px solid var(--blue-neon); text-align: center; padding: 2.5rem 1.5rem;">
+            <h2 style="font-family: 'Orbitron', sans-serif; color: var(--blue-neon); font-size: 1.8rem; margin-top: 0;">ESTRUCTURA Y FUNCIONAMIENTO DE LA CPU</h2>
+            
+            <!-- Imagen Destacada 1: Encabezado Principal -->
+            <div style="margin: 1.5rem auto; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--blue-neon); box-shadow: 0 0 15px var(--blue-glow);">
+                <img src="Clash1.jpeg" alt="Arquitectura de CPU" style="width: 100%; height: auto; display: block;">
+            </div>
 
-        <!-- Sección 1: Información / Definición -->
-        <section class="card">
-            <h3>📖 Información Teórica</h3>
-            <p>Memoria ultrarrápida y de pequeña capacidad ubicada dentro del procesador...</p>
+            <p style="font-size: 1.25rem; line-height: 1.7; color: var(--text-light); max-width: 800px; margin: 1rem auto 1.5rem auto;">
+                En esta Pagina Aprenderas Sobre La <strong>Arquitectura de Computadoras</strong>. Sus Usos Y Como se Implica en este caso especifico en Diseño , Aplicacion , Funcionamiento DE LA CPU
+            </p>
+            <div style="font-family: 'Orbitron', sans-serif; font-size: 0.95rem; color: var(--blue-accent); letter-spacing: 1px;">
+                DESARROLLADORES: <span style="color: var(--text-light);">Josue Perez | Franklin Narvaez | Emmanuel Poot | (DIOSITO)</span>
+            </div>
         </section>
 
-        <!-- Sección 2: Ejemplo Práctico -->
-        <section class="card example-card">
-            <h3>💡 Ejemplo Entendible</h3>
-            <p>Es la libreta de notas que el artesano tiene directamente en sus manos...</p>
-        </section>
+        <!-- Imagen Destacada 2: Transición visual antes de los nodos -->
+        <div style="margin: 2.5rem auto; text-align: center;">
+            <div style="max-width: 500px; margin: 0 auto; border-radius: 8px; overflow: hidden; border: 1px solid var(--card-border); box-shadow: 0 5px 20px rgba(0,0,0,0.5);">
+                <img src="ESP32.jpeg" alt="Esquema de Procesador" style="width: 100%; height: auto; display: block;">
+            </div>
+        </div>
 
-        <!-- Sección 3: Proceso Técnico -->
-        <section class="card tech-card">
-            <h3>⚙️ Proceso Técnico</h3>
-            <p>Los transistores del registro conmutan en un solo ciclo de reloj...</p>
-        </section>
+        <h2 class="topic-title" style="margin-top: 2.5rem;">MODULOS UNIDAD 2 </h2>
+        <p style="color: var(--text-muted); font-size: 1.15rem; margin-bottom: 2rem;">
+            Aqui Nuestros Nodos Disponibles
+        </p>
 
-        <!-- Navegación entre páginas -->
-        <nav class="pagination">
-            <a href="index.html" class="btn-nav">⬅️ Anterior</a>
-            <a href="punto2.html" class="btn-nav">Siguiente ➡️</a>
-        </nav>
+        <div class="grid-index">
+            <a href="punto1.html" class="index-card">
+                <h4>01. Registros</h4>
+                <p>Memoria ultrarrápida de acceso directo en el núcleo del procesador.</p>
+            </a>
+            <a href="punto2.html" class="index-card">
+                <h4>02. Contador de Programa</h4>
+                <p>Puntero de dirección (PC / IP) para la siguiente instrucción.</p>
+            </a>
+            <a href="punto3.html" class="index-card">
+                <h4>03. Registro de Instrucción</h4>
+                <p>Almacenamiento temporal (IR) para la decodificación binaria.</p>
+            </a>
+            <a href="punto4.html" class="index-card">
+                <h4>04. Registros MAR y MBR</h4>
+                <p>Puentes de enlace con la memoria RAM a través del bus del sistema.</p>
+            </a>
+            <a href="punto5.html" class="index-card">
+                <h4>05. Código de Operación</h4>
+                <p>Especificación del comando binario (Opcode) a ejecutar.</p>
+            </a>
+            <a href="punto6.html" class="index-card">
+                <h4>06. Operando</h4>
+                <p>Datos, registros o direcciones sobre los que actúa el Opcode.</p>
+            </a>
+            <a href="punto7.html" class="index-card">
+                <h4>07. Registro de Banderas</h4>
+                <p>Indicadores de estado (FLAGS / PSW) generados por la ALU.</p>
+            </a>
+            <a href="punto8.html" class="index-card">
+                <h4>08. Direccionamiento Indexado</h4>
+                <p>Cálculo de direcciones mediante base más desplazamiento.</p>
+            </a>
+            <a href="punto9.html" class="index-card">
+                <h4>09. Conjunto de Instrucciones</h4>
+                <p>Catálogo nativo del procesador (ISA) e instructivos de máquina.</p>
+            </a>
+            <a href="punto10.html" class="index-card">
+                <h4>10. Riesgos y Paradas</h4>
+                <p>Control de interrupciones y pausas (Hazards / Stalls) en Pipelining.</p>
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="final.html" class="btn-nav">VER CONCLUSIÓN DEL PROYECTO ➡️</a>
+        </div>
     </main>
 
     <footer>
-        <p>Presentación Web de Arquitectura de Computadoras &copy; 2026</p>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
     </footer>
 
 </body>

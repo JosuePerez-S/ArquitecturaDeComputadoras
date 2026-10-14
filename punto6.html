@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06. Operando - Tecnológico de Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>TECNOLÓGICO DE SOFTWARE</h1>
+            <span class="brand-sub">Módulo de Arquitectura de Computadoras</span>
+        </div>
+        <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+    </header>
+
+    <main class="container">
+        <h2 class="topic-title">06. Operando</h2>
+
+           <!-- Imagen Destacada 1: Encabezado Principal -->
+            <div style="margin: 1.5rem auto; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--blue-neon); box-shadow: 0 0 15px var(--blue-glow);">
+                <img src="m1.jpeg" alt="Arquitectura de CPU" style="width: 100%; height: auto; display: block;">
+            </div>
+
+        <section class="card">
+            <h3>📖 Definición y Concepto</h3>
+            <p>El Operando es el dato, valor constante, registro o dirección de memoria sobre el cual la CPU ejecutará de forma directa la acción descrita por el código de operación (Opcode).</p>
+        </section>
+
+           <!-- Imagen Destacada 1: Encabezado Principal -->
+            <div style="margin: 1.5rem auto; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--blue-neon); box-shadow: 0 0 15px var(--blue-glow);">
+                <img src="cdm.jpeg" alt="Arquitectura de CPU" style="width: 100%; height: auto; display: block;">
+            </div>
+
+
+
+
+        <section class="card">
+            <h3>💡 Ejemplo Entendible</h3>
+            <p>Si el Opcode es "Equipar accesorio", los operandos son el tipo de mira o silenciador específico que vas a acoplar a tu rifle y el arma destino a la que se lo vas a poner.</p>
+        </section>
+
+        <section class="card">
+            <h3>⚙️ Proceso Técnico</h3>
+            <div class="tech-box">
+                <p>Los operandos se obtienen directamente como valores inmediatos incluidos en la instrucción, se leen desde los registros internos o requieren una petición de acceso a la RAM.</p>
+            </div>
+        </section>
+
+             <!-- Imagen Destacada 1: Encabezado Principal -->
+            <div style="margin: 1.5rem auto; max-width: 600px; border-radius: 8px; overflow: hidden; border: 1px solid var(--blue-neon); box-shadow: 0 0 15px var(--blue-glow);">
+                <img src="Ope.jpeg" alt="Arquitectura de CPU" style="width: 100%; height: auto; display: block;">
+            </div>
+
+
+
+
+
+
+
+        <section class="card" style="border-left-color: var(--blue-neon);">
+            <h3>⚡ Evaluador de Operandos</h3>
+            <p>Haz clic para generar un escenario aleatorio de instrucción y comprobar sus fuentes:</p>
+            
+            <div style="background: #020617; padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--card-border);">
+                <button onclick="generarOperando()" class="btn-nav" style="cursor: pointer;">GENERAR INSTRUCCIÓN</button>
+                
+                <div id="display-operando" style="margin-top: 1rem; font-family: 'Rajdhani', sans-serif; color: var(--text-light); text-align: left; background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 6px;">
+                    Instrucción: MOV AX, [2000H] <br>Destino: Registro AX | Fuente: [2000H]
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="punto5.html" class="btn-nav">⬅️ NODO 05</a>
+            <a href="Arquitectura.html" class="btn-home">🏠 NODOS DISPONIBLES</a>
+            <a href="punto7.html" class="btn-nav">NODO 07 ➡️</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>Tecnológico de Software &copy; 2026 — Proyecto de Arquitectura de Computadoras</p>
+    </footer>
+
+    <script>
+        function generarOperando() {
+            const list = [
+                { inst: "ADD AX, BX", dest: "Registro AX", fuente: "Registro BX" },
+                { inst: "MOV CL, 05H", dest: "Registro CL", fuente: "Valor 05H" },
+                { inst: "SUB [BP+2], DX", dest: "Memoria [BP+2]", fuente: "Registro DX" }
+            ];
+            const e = list[Math.floor(Math.random() * list.length)];
+            document.getElementById('display-operando').innerHTML = `Instrucción: <strong>${e.inst}</strong> <br>Destino: ${e.dest} | Fuente: ${e.fuente}`;
+        }
+    </script>
+</body>
+</html>
